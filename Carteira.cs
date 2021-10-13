@@ -1,52 +1,57 @@
 using System;
+using System.Collections.Generic;
 
-abstract class Carteira : IOptions{
+class Carteira : IOptions{
 
-  private Usuario pessoa;
   protected double _real;
   protected double saldoBTC;
   protected double saldoETH;
   protected double saldoPVU;
-
-  /*public Carteira(){
+  protected List<(string, double)> transacao = new List<(string, double)>();
+  
+  public Carteira(){
     this._real = _real;
     this.saldoBTC = saldoBTC;
     this.saldoETH = saldoETH;
     this.saldoPVU = saldoPVU;
-  }*/
+  }
 
-  private double Real{
+  public double Real{
     get { return _real; }
     set { _real = value; } 
   }
 
-  private double SaldoBTC{
+  public double SaldoBTC{
     get { return saldoBTC; }
     set { saldoBTC = value; } 
   }
 
-  private double SaldoETH{
+  public double SaldoETH{
     get { return saldoETH; }
     set { saldoETH = value; } 
   }
 
-  private double SaldoPVU{
+  public double SaldoPVU{
     get { return saldoPVU; }
     set { saldoPVU = value; } 
   }
 
-  public virtual void compraCripto(double valor, string moeda){
-    
+  public void verificarTransacao(){
+    foreach(var list in transacao){
+      Console.WriteLine(list);
+    }
   }
-  public virtual void vendaCripto(double valor, string moeda){
 
+  public virtual void compraCripto(string moeda, double valor){
   }
 
-  protected virtual void realizarDeposito(double real){
-
+  public virtual void vendaCripto(string moeda, double valor){
   }
-  protected virtual void realizarSaque(double real){
 
+  public virtual void realizarDeposito(double real){
+  }
+  
+  public virtual void realizarSaque(double real){
   }
   
 }
