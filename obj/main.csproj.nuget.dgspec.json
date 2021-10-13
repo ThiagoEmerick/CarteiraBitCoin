@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/runner/C/main.csproj": {}
+    "/home/runner/CarteiraBitCoin/main.csproj": {}
   },
   "projects": {
-    "/home/runner/C/main.csproj": {
+    "/home/runner/CarteiraBitCoin/main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/runner/C/main.csproj",
+        "projectUniqueName": "/home/runner/CarteiraBitCoin/main.csproj",
         "projectName": "main",
-        "projectPath": "/home/runner/C/main.csproj",
+        "projectPath": "/home/runner/CarteiraBitCoin/main.csproj",
         "packagesPath": "/home/runner/.nuget/packages/",
-        "outputPath": "/home/runner/C/obj/",
+        "outputPath": "/home/runner/CarteiraBitCoin/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/runner/.nuget/NuGet/NuGet.Config"

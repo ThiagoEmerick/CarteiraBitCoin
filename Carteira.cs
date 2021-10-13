@@ -1,6 +1,6 @@
 using System;
 
-class Carteira{
+class Carteira : IOptions{
   private double _real;
   private double saldoBTC;
   private double saldoETH;
@@ -33,14 +33,19 @@ class Carteira{
     set { saldoPVU = value; } 
   }
 
+  protected virtual void compraCripto(double valor, string moeda){
+  }
+
+  protected virtual void vendaCripto(double valor, string moeda){
+  }
+
+
   protected virtual void realizarDeposito(double real){
     this._real += real;
-    return real;
   }
 
   protected virtual void realizarSaque(double real){
     this._real -= real;
-    return real;
   }
 
   

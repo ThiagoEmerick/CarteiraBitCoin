@@ -1,10 +1,10 @@
 using System;
-class Criptomoeda : Carteira, IOptions {
+class CriptoMoeda : Carteira, IOptions {
 
   private double valor;
   private string moeda;
 
-  void IOptions.compraCripto(double valor, string moeda){
+  protected override void compraCripto(double valor, string moeda){
     switch(moeda){
       case "BTC":
         if(valor*250.00000 > this._real){
@@ -42,7 +42,7 @@ class Criptomoeda : Carteira, IOptions {
     }
   }
 
-  void IOptions.vendaCripto(double valor, string moeda){
+  protected override void vendaCripto(double valor, string moeda){
     switch(moeda){
       case "BTC":
         if(valor < this.saldoBTC){

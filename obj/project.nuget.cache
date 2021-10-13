@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CuekrsBWlv+ZlBDZR+cT8QuPOkCp1p6RtBISpxhKU7bSTTKqeXDgLsYSmz8Xg743HG19qxr4RYv3VnEoqqTaVA==",
+  "dgSpecHash": "4yY/q1aTt/LqDSP3aBqCfEKjJUODSjMnJQ/hdMnoOYfMz869ljOBPgvnjTVVJBlqS62iKomfDusV8i9ziYNvpw==",
   "success": true,
-  "projectFilePath": "/home/runner/C/main.csproj",
+  "projectFilePath": "/home/runner/CarteiraBitCoin/main.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
