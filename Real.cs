@@ -2,7 +2,8 @@ using System;
 class Real : Carteira {
   public override void realizarDeposito(double real){
     if(real >= 0){
-      this._real += real;
+      Real += real;
+      Console.WriteLine("Depósito realizado");
       transacao.Add(("Adicionado via Depósito", real));
     }
     else{
@@ -11,8 +12,8 @@ class Real : Carteira {
   }
 
   public override void realizarSaque(double real){
-    if(real <= this._real){ 
-      this._real -= real;
+    if(real <= Real){ 
+      Real -= real;
       transacao.Add(("Descontado via Saque", real));
     }
     else{

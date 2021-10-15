@@ -1,39 +1,39 @@
 using System;
 class Criptomoeda : Carteira{
 
-  public override void compraCripto(string moeda, double valor){
+  public override void compraCripto(int moeda, double valor){
     switch(moeda){
-      case "BTC":
-        if(valor*250.00000 <= this._real){
-          this.saldoBTC += valor;
-          this._real -= (valor*250.00000);
+      case 1:
+        if(valor*250.00000 <= Real){
+          SaldoBTC += valor;
+          Real -= (valor*250.00000);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }
         else{
-          Console.WriteLine("Está tentando vender mais do que tem.");
+          Console.WriteLine("Saldo insuficiente");
         }
       break;
-      case "ETH":
-        if(valor*160.0000 <= this._real){
-          this.saldoETH += valor;
-          this._real -= (valor*160.0000);
+      case 2:
+        if(valor*160.0000 <= Real){
+          SaldoETH += valor;
+          Real -= (valor*160.0000);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }
         else{
-          Console.WriteLine("Está tentando vender mais do que tem.");
+          Console.WriteLine("Saldo insuficiente");
         }
       break;
-      case "PVU":
-        if(valor*14.00 >= this._real){
-          this.saldoPVU += valor;
-          this._real -= (valor*14.00);
+      case 3:
+        if(valor*14.00 <= Real){
+          SaldoPVU += valor;
+          Real -= (valor*14.00);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
           }
           else{
-            Console.WriteLine("Está tentando vender mais do que tem.");
+            Console.WriteLine("Saldo insuficiente");
           }
         break;
       default:
@@ -42,12 +42,12 @@ class Criptomoeda : Carteira{
     }
   }
 
-  public override void vendaCripto(string moeda, double valor){
+  public override void vendaCripto(int moeda, double valor){
     switch(moeda){
-      case "BTC":
-        if(valor <= this.saldoBTC){
-          this.saldoBTC -= valor;
-          this._real += (valor*250.00000);
+      case 1:
+        if(valor <= SaldoBTC){
+          SaldoBTC -= valor;
+          Real += (valor*250.00000);
           Console.WriteLine("Venda efetuada com sucesso!");
           transacao.Add(("Adicionado por Venda de criptomoeda", valor));
         }
@@ -55,10 +55,10 @@ class Criptomoeda : Carteira{
           Console.WriteLine("Está tentando vender mais do que tem.");
         }
         break;
-      case "ETH":
-        if(valor <= this.saldoETH){
-          this.saldoETH -= valor;
-          this._real += (valor*160.0000);
+      case 2:
+        if(valor <= SaldoETH){
+          SaldoETH -= valor;
+          Real += (valor*160.0000);
           Console.WriteLine("Venda efetuada com sucesso!");
           transacao.Add(("Adicionado por Venda de criptomoeda", valor));
         }
@@ -66,7 +66,7 @@ class Criptomoeda : Carteira{
           Console.WriteLine("Está tentando vender mais do que tem.");
         }
         break;
-      case "PVU":
+      case 3:
         if(valor <= this.saldoPVU){
           this.saldoPVU -= valor;
           this._real += (valor*14.00);

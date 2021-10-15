@@ -7,15 +7,14 @@ using System.IO;
 
 class main {
   public static void Main (string[] args) {
-    Real a = new Real();
-    Carteira b = new Carteira();
-    Criptomoeda c = new Criptomoeda();
+    IOptions a = new Carteira();
 
     a.realizarDeposito(100);
-    c.compraCripto("BTC", 2);
-    Console.WriteLine(b.SaldoPVU);
-    Console.WriteLine(b.Real);
-    b.verificarTransacao();
+    a.realizarDeposito(100);
+    a.realizarSaque(100);
+    a.compraCripto(3, 2);
 
+    a.verificarTransacao();
+    
   }
 }
