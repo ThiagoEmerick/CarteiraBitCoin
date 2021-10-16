@@ -2,11 +2,12 @@ using System;
 class Criptomoeda : Carteira{
 
   public override void compraCripto(int moeda, double valor){
+    
     switch(moeda){
       case 1:
-        if(valor*250.00000 <= Real){
+        if(valor*this.BTC <= Real){
           SaldoBTC += valor;
-          Real -= (valor*250.00000);
+          Real -= (valor*this.BTC);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }
@@ -15,9 +16,9 @@ class Criptomoeda : Carteira{
         }
       break;
       case 2:
-        if(valor*160.0000 <= Real){
+        if(valor*this.ETH <= Real){
           SaldoETH += valor;
-          Real -= (valor*160.0000);
+          Real -= (valor*this.ETH);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }
@@ -26,9 +27,9 @@ class Criptomoeda : Carteira{
         }
       break;
       case 3:
-        if(valor*14.00 <= Real){
+        if(valor*this.PVU <= Real){
           SaldoPVU += valor;
-          Real -= (valor*14.00);
+          Real -= (valor*this.PVU);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
           }
@@ -47,7 +48,7 @@ class Criptomoeda : Carteira{
       case 1:
         if(valor <= SaldoBTC){
           SaldoBTC -= valor;
-          Real += (valor*250.00000);
+          Real += (valor*this.BTC);
           Console.WriteLine("Venda efetuada com sucesso!");
           transacao.Add(("Adicionado por Venda de criptomoeda", valor));
         }
@@ -58,7 +59,7 @@ class Criptomoeda : Carteira{
       case 2:
         if(valor <= SaldoETH){
           SaldoETH -= valor;
-          Real += (valor*160.0000);
+          Real += (valor*this.ETH);
           Console.WriteLine("Venda efetuada com sucesso!");
           transacao.Add(("Adicionado por Venda de criptomoeda", valor));
         }
@@ -69,7 +70,7 @@ class Criptomoeda : Carteira{
       case 3:
         if(valor <= this.saldoPVU){
           this.saldoPVU -= valor;
-          this._real += (valor*14.00);
+          this._real += (valor*this.PVU);
           Console.WriteLine("Venda efetuada com sucesso!");
           transacao.Add(("Adicionado por Venda de criptomoeda", valor));
           }

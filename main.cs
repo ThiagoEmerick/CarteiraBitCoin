@@ -5,16 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-class main {
+
+class Program {
   public static void Main (string[] args) {
-    IOptions a = new Carteira();
+    bool repetir = true;
+    string resposta;
+    CotacaoMoeda a = new CotacaoMoeda();
+    CotacaoMoeda c = new CotacaoMoeda(); 
 
-    a.realizarDeposito(100);
-    a.realizarDeposito(100);
-    a.realizarSaque(100);
-    a.compraCripto(3, 2);
+    while (repetir == true){
+      a.ValorMoedas();
+      a.AlteracaoPreco();
+      a.ValorMoedas();
+      Console.WriteLine("Deseja sair:(S/N)");
+      resposta = Console.ReadLine();
+      if (resposta == "S"){
+        repetir = false;
+      }
+    }
 
-    a.verificarTransacao();
-    
-  }
+
+
+ }
 }
