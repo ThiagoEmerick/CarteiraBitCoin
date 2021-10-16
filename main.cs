@@ -8,8 +8,10 @@ using System.IO;
 
 class Program {
   public static void Main (string[] args) {
+
     bool repetir = true;
     string resposta;
+    
     CotacaoMoeda a = new CotacaoMoeda();
     CotacaoMoeda c = new CotacaoMoeda(); 
 
@@ -23,8 +25,5 @@ class Program {
         repetir = false;
       }
     }
-
-
-
  }
 }
