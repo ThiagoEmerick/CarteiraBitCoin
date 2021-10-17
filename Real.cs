@@ -1,6 +1,6 @@
 using System;
 class Real : Carteira {
-  /*public override void realizarDeposito(double real){
+  public override void realizarDeposito(double real){
     if(real >= 0){
       Real += real;
       Console.WriteLine("Depósito realizado");
@@ -9,7 +9,7 @@ class Real : Carteira {
     else{
       Console.WriteLine("Sério que ta tentando colocar nada?");
     }
-  }*/
+  }
 
   public override void realizarSaque(double real){
     if(real <= Real){ 

@@ -10,7 +10,6 @@ class CotacaoMoeda : Carteira {
       double PVU = this.PVU;
       double contabtc,contaeth,contapvu,porcentagembtc,porcentagemeth, porcentagempvu;
 
-
       contabtc = BTC + rnd.Next(-10000,10000);
       if (contabtc <= 0){
         contabtc = BTC + rnd.Next(1,10000);
@@ -41,7 +40,6 @@ class CotacaoMoeda : Carteira {
         this.setPVU(contapvu);
       }
     
-
     if(porcentagembtc > 0 || porcentagemeth > 0 || porcentagempvu > 0){
       
       if (porcentagembtc > porcentagemeth && porcentagembtc > porcentagempvu){

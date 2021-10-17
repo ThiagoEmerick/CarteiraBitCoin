@@ -1,7 +1,7 @@
 using System;
 class Criptomoeda : Carteira{
 
-  public override void compraCripto(int moeda, double valor){
+  public void compraCripto(int moeda, double valor){
     
     switch(moeda){
       case 1:
@@ -16,9 +16,9 @@ class Criptomoeda : Carteira{
         }
       break;
       case 2:
-        if(valor*this.ETH <= Real){
+        if(valor*ETH <= Real){
           SaldoETH += valor;
-          Real -= (valor*this.ETH);
+          Real -= (valor*ETH);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }

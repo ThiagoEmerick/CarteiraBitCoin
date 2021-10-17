@@ -21,8 +21,8 @@ class Carteira : IOptions{
   }*/
   
   public Carteira(){
-    this.BTC = 25000000;
-    this.ETH = 1600000;
+    this.BTC = 250000;
+    this.ETH = 160000;
     this.PVU = 1400;
   }
 
@@ -34,6 +34,13 @@ class Carteira : IOptions{
   }
   public void setPVU(double PVU){
     this.PVU = PVU;
+  }
+
+  public void vizualizarSaldo(){
+    Console.WriteLine("Seu saldo em real é: {0}", Real);
+    Console.WriteLine("Seu saldo em BTC é: {0}", SaldoBTC);
+    Console.WriteLine("Seu saldo em ETH é: {0}", SaldoETH);
+    Console.WriteLine("Seu saldo em PVU é: {0}", SaldoPVU);
   }
 
   public double Real{
@@ -76,9 +83,9 @@ class Carteira : IOptions{
         }
       break;
       case 2:
-        if(valor*this.ETH <= Real){
+        if(valor*ETH <= Real){
           SaldoETH += valor;
-          Real -= (valor*this.ETH);
+          Real -= (valor*ETH);
           Console.WriteLine("Compra efetuada com sucesso!");
           transacao.Add(("Descontado por Compra de criptomoeda", valor));
         }
@@ -143,6 +150,18 @@ class Carteira : IOptions{
         break;
     }
   }
+
+  public virtual void realizarDeposito(double real){
+    if(real >= 0){
+      Real += real;
+      Console.WriteLine("Depósito realizado");
+      transacao.Add(("Adicionado via Depósito", real));
+    }
+    else{
+      Console.WriteLine("Sério que ta tentando colocar nada?");
+    }
+  }
+
   
   public virtual void realizarSaque(double real){
     if(real <= Real){ 
@@ -157,4 +176,5 @@ class Carteira : IOptions{
   public void ValorMoedas() {
     Console.WriteLine("BTC = {0}\nETH = {1}\nPVU = {2}",this.BTC,this.ETH,this.PVU);
   }
+
 }
