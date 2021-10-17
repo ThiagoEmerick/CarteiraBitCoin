@@ -1,5 +1,5 @@
 using System;
-class Real : Carteira {
+class Real : Carteira,IOptions {
   public override void realizarDeposito(double real){
     if(real >= 0){
       Real += real;

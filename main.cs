@@ -15,16 +15,15 @@ class Program {
     double svalor, cmoeda;
     
     IOptions a = new Carteira();
-    CotacaoMoeda b = new CotacaoMoeda();
 
     while (repetir == true){
       Console.WriteLine("1. Cotação da moeda\n2. Deposito\n3. Saque\n4. Compra criptomoeda\n5. Ver histórico\n6. Vizualizar saldo\n");
       navegacao = Convert.ToInt32(Console.ReadLine());
       switch (navegacao){ 
         case 1:
-          b.ValorMoedas();
-          b.AlteracaoPreco();
-          b.ValorMoedas();
+          a.ValorMoedas();
+          a.AlteracaoPreco();
+          a.ValorMoedas();
           break;
           
         case 2:

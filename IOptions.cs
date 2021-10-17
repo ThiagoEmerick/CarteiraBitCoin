@@ -6,5 +6,7 @@ interface IOptions{
   void realizarSaque(double real);
   void verificarTransacao();
   void vizualizarSaldo();
+  void AlteracaoPreco();
+  void ValorMoedas();
 
 }

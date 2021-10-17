@@ -1,7 +1,7 @@
 using System;
-class Criptomoeda : Carteira{
+class Criptomoeda : Carteira,IOptions{
 
-  public void compraCripto(int moeda, double valor){
+  public override void compraCripto(int moeda, double valor){
     
     switch(moeda){
       case 1:
@@ -9,7 +9,7 @@ class Criptomoeda : Carteira{
           SaldoBTC += valor;
           Real -= (valor*this.BTC);
           Console.WriteLine("Compra efetuada com sucesso!");
-          transacao.Add(("Descontado por Compra de criptomoeda", valor));
+          transacao.Add(("Descontado por Compra de criptomoeda", valor*this.BTC));
         }
         else{
           Console.WriteLine("Saldo insuficiente");
@@ -20,7 +20,7 @@ class Criptomoeda : Carteira{
           SaldoETH += valor;
           Real -= (valor*ETH);
           Console.WriteLine("Compra efetuada com sucesso!");
-          transacao.Add(("Descontado por Compra de criptomoeda", valor));
+          transacao.Add(("Descontado por Compra de criptomoeda", valor*this.ETH));
         }
         else{
           Console.WriteLine("Saldo insuficiente");
@@ -31,7 +31,7 @@ class Criptomoeda : Carteira{
           SaldoPVU += valor;
           Real -= (valor*this.PVU);
           Console.WriteLine("Compra efetuada com sucesso!");
-          transacao.Add(("Descontado por Compra de criptomoeda", valor));
+          transacao.Add(("Descontado por Compra de criptomoeda", valor*this.PVU));
           }
           else{
             Console.WriteLine("Saldo insuficiente");
@@ -50,7 +50,7 @@ class Criptomoeda : Carteira{
           SaldoBTC -= valor;
           Real += (valor*this.BTC);
           Console.WriteLine("Venda efetuada com sucesso!");
-          transacao.Add(("Adicionado por Venda de criptomoeda", valor));
+          transacao.Add(("Adicionado por Venda de criptomoeda", valor*this.BTC));
         }
         else{
           Console.WriteLine("Está tentando vender mais do que tem.");
@@ -61,7 +61,7 @@ class Criptomoeda : Carteira{
           SaldoETH -= valor;
           Real += (valor*this.ETH);
           Console.WriteLine("Venda efetuada com sucesso!");
-          transacao.Add(("Adicionado por Venda de criptomoeda", valor));
+          transacao.Add(("Adicionado por Venda de criptomoeda", valor*this.ETH));
         }
         else{
           Console.WriteLine("Está tentando vender mais do que tem.");
@@ -72,7 +72,7 @@ class Criptomoeda : Carteira{
           this.saldoPVU -= valor;
           this._real += (valor*this.PVU);
           Console.WriteLine("Venda efetuada com sucesso!");
-          transacao.Add(("Adicionado por Venda de criptomoeda", valor));
+          transacao.Add(("Adicionado por Venda de criptomoeda", valor*this.PVU));
           }
           else{
             Console.WriteLine("Está tentando vender mais do que tem.");

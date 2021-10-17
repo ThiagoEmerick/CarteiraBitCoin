@@ -1,8 +1,8 @@
 using System;
 
-class CotacaoMoeda : Carteira {
+class CotacaoMoeda : Carteira,IOptions {
   
-  public void AlteracaoPreco(){
+  public override void AlteracaoPreco(){
 
       Random rnd = new Random();
       double BTC = this.BTC;
