@@ -1,5 +1,5 @@
 using System;
-class Criptomoeda : Carteira,IOptions{
+class Criptomoeda : Carteira{
 
   public override void compraCripto(int moeda, double valor){
     

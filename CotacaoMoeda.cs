@@ -1,6 +1,6 @@
 using System;
 
-class CotacaoMoeda : Carteira,IOptions {
+class CotacaoMoeda : Carteira{
   
   public override void AlteracaoPreco(){
 
